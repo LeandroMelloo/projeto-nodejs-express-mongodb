@@ -1,14 +1,14 @@
 const User = require('../../model/user.model')
 
-const createUserDAO = async (body) => {
+const createUserDAO = async(body)=>{
     let newUser = new User({
         name: body.name,
-        email: body.email,
         company: body.company,
         salary: body.salary,
-        username: body.username,
+        userName: body.userName,
         password: body.password,
-        adress: body.adress,
+        email: body.email,
+        address: body.address,
     })
     return await newUser.save()
 }

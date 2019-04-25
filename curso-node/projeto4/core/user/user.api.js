@@ -1,6 +1,6 @@
 const userDAO = require('./user.dao')
 
-const creatUser = async (req,res) => {
+const creatUser = async (req, res) => {
     let body = req.body
     try {
         let userCreated = await userDAO.createUserDAO(body)

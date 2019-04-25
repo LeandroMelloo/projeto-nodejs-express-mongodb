@@ -3,8 +3,8 @@ const bodyParser = require('body-parser')
 
 require('../config/db')
 
-app.use('/api', require('../core/user/user.routes'))
+app.use(bodyParser.json()) // body-parser
 
-app.use(bodyParser.json())
+app.use('/api', require('../core/user/user.routes'))
 
 module.exports = app
