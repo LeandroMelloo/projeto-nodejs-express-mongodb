@@ -1,0 +1,17 @@
+{
+  "name": "projeto4",
+  "version": "1.0.0",
+  "description": "Projeto4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Leandro Mello",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.3"
+  }
+}
