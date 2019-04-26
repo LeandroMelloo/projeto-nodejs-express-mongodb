@@ -25,9 +25,9 @@ const readUserDAO = async (id) => {
     })
 }
 
-// atualiza o usuario pelo ID
+// atualizar o usuario pelo ID
 const updateUserDAO = async (id, body) => {
-    return await User.findByIdAndUpdate(id, body)
+    return await User.findOneAndUpdate({"userId": id }, body) 
 }
 
 // remove o usuario pelo ID
