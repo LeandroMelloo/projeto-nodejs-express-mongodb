@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/projeto4', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://admin:admin@clusterapi-vqrfi.mongodb.net/test?retryWrites=true', {useNewUrlParser: true});
 
 var db = mongoose.connection
 

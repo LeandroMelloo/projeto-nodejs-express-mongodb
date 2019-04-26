@@ -1,19 +1,12 @@
 const userDAO = require('./user.dao')
-const validateDAO = require('./user.dao')
 
 const creatUser = async (req, res) => {
     let body = req.body
     try {
-        let validate = validateDAO
-        if(validate) {
-            res.status(500).send('Usuário já cadastrado')
-        } else {
-            let userCreated = await userDAO.createUserDAO(body)
-            res.status(201).json(userCreated)
-        }
+        let userCreated = await userDAO.createUserDAO(body)
+        res.status(201).json(userCreated)
     } catch (error) {
         res.status(500).json(error)
-        console.log(error)
     }
 }
 

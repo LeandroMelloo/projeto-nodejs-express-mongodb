@@ -4,21 +4,17 @@ const encrypting = require('../../util/encrypt')
 const createUserDAO = async (body) => {
     var password = await encrypting.encrypt(body.password)
 
-    if (validateDAO(body.userId)) {
-        console.log(validateDAO)
-    } else {
-        let newUser = new User({
-            userId: body.userId,
-            name: body.name,
-            company: body.company,
-            salary: body.salary,
-            userName: body.userName,
-            password: password,
-            email: body.email,
-            address: body.address,
-        })
-        return await newUser.save()
-    }
+    let newUser = new User({
+        userId: body.userId,
+        name: body.name,
+        company: body.company,
+        salary: body.salary,
+        userName: body.userName,
+        password: password,
+        email: body.email,
+        address: body.address,
+    })
+    return await newUser.save()
 }
 
 
@@ -46,11 +42,6 @@ const listUserDAO = async () => {
     return await User.find()
 }
 
-const validateDAO = async (id) => {
-    return await User.findOne({
-        "userId": id
-    })
-}
 
 module.exports = {
     createUserDAO,

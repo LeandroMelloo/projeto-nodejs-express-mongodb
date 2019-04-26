@@ -1,10 +1,9 @@
 const jwt = require('jsonwebtoken')
-const SECRET = 'ovodeavestruz'
 
 const tokenGenerator = (payload) => {
 
     try {
-        let token = jwt.sign(payload, SECRET, { expiresIn: "1h" })
+        let token = jwt.sign(payload, process.env.SECRET, { expiresIn: "1h" })
         return token
     } catch (error) {
         console.log(error)
@@ -16,7 +15,7 @@ const tokenGenerator = (payload) => {
 const tokenValidator = (token) => {
     if (!token) throw new Error("token inválido")
 
-    return jwt.verify(token, SECRET)
+    return jwt.verify(token, process.env.SECRET)
 }
 
 module.exports = {
